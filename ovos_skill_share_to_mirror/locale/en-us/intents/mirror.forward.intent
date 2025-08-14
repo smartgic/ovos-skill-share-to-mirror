@@ -1,0 +1,7 @@
+forward {seconds} seconds on the mirror
+skip ahead {seconds} seconds on the mirror
+forward on the mirror
+fast forward {seconds} seconds on the mirror
+skip {seconds} seconds on the mirror
+forward {seconds} on the mirror
+fast forward on the mirror

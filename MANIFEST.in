@@ -1,0 +1,4 @@
+recursive-include ovos_skill_share_to_mirror/locale *
+include skill.json
+include README.md
+include requirements.txt

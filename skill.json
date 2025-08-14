@@ -1,0 +1,31 @@
+{
+  "skill_id": "ovos-skill-share-to-mirror.smartgic",
+  "source": "https://github.com/your-org/ovos-skill-share-to-mirror",
+  "name": "Share To Mirror (YouTube Control)",
+  "description": "Control YouTube playback on MagicMirror via MMM-ShareToMirror with intelligent search, Shorts/long video support, and anti-repetition.",
+  "examples": [
+    "play a video about cooking on the mirror",
+    "play shorts about cats on the mirror",
+    "play long videos about history on the mirror",
+    "play the video called bohemian rhapsody on the mirror",
+    "play something from ted talks channel on the mirror",
+    "pause the video on the mirror",
+    "resume the video on the mirror",
+    "stop the video on the mirror",
+    "rewind 30 seconds on the mirror",
+    "forward 10 seconds on the mirror",
+    "restart the video on the mirror",
+    "skip this video on the mirror",
+    "whats playing on the mirror"
+  ],
+  "tags": [
+    "youtube",
+    "magicmirror",
+    "share",
+    "video",
+    "cast",
+    "shorts",
+    "intelligent-search",
+    "multilingual"
+  ]
+}
