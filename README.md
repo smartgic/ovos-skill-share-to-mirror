@@ -14,6 +14,7 @@ Transform your **MagicMirror²** into a voice-controlled YouTube player! This OV
 - 🧠 **Check status** to see what's currently playing
 - 🛠️ **Customize defaults** for captions and video quality
 - 🎯 **Smart search** that avoids repeating the same videos for identical requests
+- 🖥️ **Overlay control** - Switch between fullscreen and windowed video modes
 
 This skill features a modular architecture with intelligent search capabilities, fuzzy matching, and anti-repetition algorithms to provide varied content every time.
 
@@ -181,6 +182,11 @@ All commands must include "**on the mirror**" to ensure the skill recognizes the
 - "**What's the mirror status**"
 - "**Check mirror status**"
 
+### Overlay Control
+- "**Make the video fullscreen on the mirror**"
+- "**Switch to windowed mode on the mirror**"
+- "**Toggle video mode on the mirror**"
+
 ---
 
 ## 🧠 How It Works
@@ -200,6 +206,7 @@ Here's what happens when you give a voice command:
    - `/api/stop` – Stop playback
    - `/api/status` – Check what's currently playing
    - `/api/options` – Set caption and quality preferences
+   - `/api/overlay` – Control video display mode (fullscreen, windowed, toggle)
 
 The skill features a **modular architecture** with separate components for API communication, YouTube search, and utility functions, making it easy to maintain and extend.
 

@@ -157,6 +157,25 @@ class MirrorAPIClient:
         result = self._make_request("POST", "/api/options", payload)
         return result is not None
 
+    def control_overlay(self, action: str) -> bool:
+        """Control video overlay display mode.
+        
+        Args:
+            action: Overlay action ('fullscreen', 'windowed', 'toggle')
+            
+        Returns:
+            True if overlay control was successful
+        """
+        valid_actions = ["fullscreen", "windowed", "toggle"]
+        if action not in valid_actions:
+            LOG.error(f"[MirrorAPI] Invalid overlay action: {action}")
+            return False
+            
+        payload = {"action": action}
+        LOG.debug(f"[MirrorAPI] Overlay control: {payload}")
+        result = self._make_request("POST", "/api/overlay", payload)
+        return result is not None
+
     def close(self) -> None:
         """Close the HTTP session and clean up resources."""
         if hasattr(self, 'session'):

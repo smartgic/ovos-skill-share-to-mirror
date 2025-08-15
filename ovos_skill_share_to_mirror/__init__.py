@@ -119,6 +119,9 @@ class ShareToMirrorSkill(OVOSSkill):
             ("mirror.skip.intent", self.handle_skip),
             ("mirror.restart.intent", self.handle_restart),
             ("mirror.status.intent", self.handle_status),
+            ("mirror.fullscreen.intent", self.handle_fullscreen),
+            ("mirror.windowed.intent", self.handle_windowed),
+            ("mirror.toggle.overlay.intent", self.handle_toggle_overlay),
         ]
         
         for intent_file, handler in intent_handlers:
@@ -357,6 +360,48 @@ class ShareToMirrorSkill(OVOSSkill):
             "state": "playing" if playing else "stopped", 
             "last": last
         })
+
+    def handle_fullscreen(self, _message) -> None:
+        """Handle intent to switch video to fullscreen mode.
+        
+        Args:
+            _message: Intent message (unused).
+            
+        Voice examples:
+            - "Make the video fullscreen on the mirror"
+            - "Switch to fullscreen on the mirror"
+            - "Fullscreen mode on the mirror"
+        """
+        if self.api_client.control_overlay("fullscreen"):
+            self.speak_dialog("fullscreen")
+
+    def handle_windowed(self, _message) -> None:
+        """Handle intent to switch video to windowed mode.
+        
+        Args:
+            _message: Intent message (unused).
+            
+        Voice examples:
+            - "Make the video windowed on the mirror"
+            - "Switch to windowed mode on the mirror"
+            - "Window mode on the mirror"
+        """
+        if self.api_client.control_overlay("windowed"):
+            self.speak_dialog("windowed")
+
+    def handle_toggle_overlay(self, _message) -> None:
+        """Handle intent to toggle between fullscreen and windowed modes.
+        
+        Args:
+            _message: Intent message (unused).
+            
+        Voice examples:
+            - "Toggle video mode on the mirror"
+            - "Switch video display on the mirror"
+            - "Change video size on the mirror"
+        """
+        if self.api_client.control_overlay("toggle"):
+            self.speak_dialog("overlay_toggled")
 
     # ===== OVOS Framework Integration =====
 
